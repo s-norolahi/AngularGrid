@@ -1,0 +1,62 @@
+$header-color: rgb(98, 113, 248);
+$hover-color: #ccc;
+$border-color: rgb(153, 151, 151);
+$selectd-color: rgb(245, 135, 46);
+$text-color-light: #fff;
+.searchBox {
+  padding-bottom: 10px;
+}
+.customTable thead tr {
+  background-color: $header-color;
+  color: $text-color-light;
+}
+.customTable tbody tr:hover {
+  background-color: $hover-color;
+  cursor: pointer;
+}
+.customTable th {
+  padding: 5px;
+}
+.customTable td {
+  // padding: 5px;
+  text-align: center;
+}
+.customTable .internalDiv {
+  //   background-color: #fff;
+  padding: 5px;
+  display: inline-block;
+  width: 70%;
+}
+.actionBox {
+  display: inline-block;
+  text-align: center;
+}
+.actionBox a {
+  margin-right: 15px;
+}
+table {
+  border-spacing: 0px;
+  width: 100%;
+}
+.gridBox {
+  border: 1px solid $hover-color;
+  display: inline-block;
+  width: 100%;
+}
+.selected {
+  background-color: $selectd-color;
+  color: #fff;
+}
+.pagination-wrapper {
+  display: inline-block;
+  width: 134%;
+  padding-top: 20px;
+}
+.pagination img {
+  width: 50px !important;
+}
+.actionImage {
+  width: 20px;
+  position: relative;
+  top: 5px;
+}

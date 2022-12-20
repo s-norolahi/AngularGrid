@@ -1,0 +1,72 @@
+<div class="searchBox">
+    <input matInput type="text" [(ngModel)]="searchValue" class="marginsearchinput" placeholder="جستجو"
+        (input)="refreshPager()" />
+</div>
+<div class="gridBox ">
+    <table class="table tableView" class="customTable">
+        <thead>
+            <tr class="tblHeader">
+                <th *ngFor="let column of config.columns">{{column.displayName}}</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of pagedList" (click)="rowClick(item)" [ngClass]="{'selected': (item==selectedRow)}"
+                class="noselect">
+                <td *ngFor="let col of config.columns ;let i = index" [ngSwitch]="editClicked && (item==selectedRow)"
+                    [ngSwitch]="editClicked && (item==selectedRow)">
+                    <div *ngIf="i==0" class="actionBox">
+                        <a *ngSwitchDefault (click)="edit(item)"><img src="/assets/svgs/edit.svg"
+                                class="actionImage" /></a>
+                        <a *ngSwitchDefault (click)="removeItem(item)"><img src="/assets/svgs/remove.svg"
+                                class="actionImage" /></a>
+                        <a *ngSwitchCase="true" (click)="save(item)"><img src="/assets/svgs/confirm.svg"
+                                class="actionImage" /></a>
+                        <a *ngSwitchCase="true" (click)="editedItem=null"><img src="/assets/svgs/cancel.svg"
+                                class="actionImage" /></a>
+                    </div>
+
+                    <div class="internalDiv" [ngClass]="{'fullWidth': i!=0}">
+                        <span *ngSwitchDefault>{{item[col.name]}}</span>
+                        <input *ngSwitchCase="true" type="text" [value]="item[col.name]"
+                            (change)="setParentValue(item,col.name,$event)" />
+                    </div>
+                </td>
+                <!-- <td [ngSwitch]="editClicked && (item==selectedRow)">
+                    <a *ngSwitchDefault (click)="edit(item)">edit</a>
+                    <a *ngSwitchDefault (click)="removeItem(item)">remove</a>
+                    <a *ngSwitchCase="true" (click)="save(item)">save</a>
+                    <a *ngSwitchCase="true" (click)="editedItem=null">cancel</a>
+                </td> -->
+            </tr>
+        </tbody>
+
+        <div class="pagination-wrapper">
+            <app-pagination [total]="filterdList.length" [pageSize]="pageSize" (valueChange)="onPageChange($event)"
+                #paginator>
+            </app-pagination>
+        </div>
+
+    </table>
+    <hr />
+    <table class="table tableView" class="customTable">
+        <thead>
+            <tr class="tblHeader">
+                <th></th>
+                <th *ngFor="let column of config.columns">{{column.displayName}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <a (click)="addItem()"><img src="/assets/svgs/addNew.svg" /></a>
+                </td>
+                <td *ngFor="let col of config.columns">
+                    <div class="internalDiv">
+                        <input type="text" [value]="newItem[col.name]" (change)="setNewItem(col.name,$event)" />
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

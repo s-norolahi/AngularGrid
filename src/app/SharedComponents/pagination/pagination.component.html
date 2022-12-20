@@ -1,0 +1,24 @@
+<div class="pagination" class="noselect">
+    <a (click)="selectPage(1)" *ngIf="!(value === 1)">
+
+        <img src="/assets/svgs/first.svg" class="actionImage" />
+    </a>
+    <a (click)="selectPage(value - 1)" *ngIf="!(value === 1)">
+
+        <img src="/assets/svgs/perv.svg" class="actionImage" />
+    </a>
+    <a *ngFor="let page of visiblePages" [ngClass]="{'selectedPage': value === page}" (click)="selectPage(page)">
+        {{ page }}
+    </a>
+    <a (click)="selectPage(value + 1)" *ngIf="!(value === totalPages)">
+
+        <img src="/assets/svgs/next.svg" class="actionImage" />
+    </a>
+    <a (click)="selectPage(totalPages)" *ngIf="!(value === totalPages)">
+
+        <img src="/assets/svgs/last.svg" class="actionImage" />
+    </a>
+    <div class="totalCount">
+        <span>تعداد:{{total}}</span>
+    </div>
+</div>

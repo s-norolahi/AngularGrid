@@ -1,0 +1,9 @@
+$light-color: #ffff;
+$dark-color: rgb(57, 49, 65);
+.mainContent {
+  background: $light-color;
+  padding: 5% 30%;
+}
+a:hover {
+  cursor: pointer;
+}

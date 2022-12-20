@@ -1,0 +1,24 @@
+$selectedPage-color: rgb(67, 80, 252);
+.selectedPage {
+  color: $selectedPage-color;
+}
+.pagination a:hover {
+  cursor: pointer;
+}
+.pagination a {
+  padding: 0 4px;
+}
+.pagination {
+  padding-left: 5px;
+  display: inline-block;
+  width: 100%;
+}
+.totalCount {
+  display: inline-block;
+  padding-left: 10%;
+}
+.actionImage {
+  width: 24px;
+  position: relative;
+  top: 5px;
+}
