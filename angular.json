@@ -2,9 +2,8 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
     "analytics": false
-    
   },
-  "version": 1,
+  "version": 1.2,
   "newProjectRoot": "projects",
   "projects": {
     "testGrid": {
