@@ -23,11 +23,15 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Techniques and Features
 .Html And Css
+<br/>
 .Angular
+<br/>
 .Crud Action
+<br/>
 .Pagination
+<br/>
 .Theming(Dark And white)
-
+<br/>
 ## Please give me a star⭐
 
 If you like this project,Thanks ❤
